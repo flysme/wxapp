@@ -1,0 +1,15 @@
+<view class="main-container">
+   <view class='header-swiper'>
+          <swiper autoplay indicator-dots="true" interval="2000" indicator-color="{{precolor}}" indicator-active-color="{{curcolor}}">
+            <swiper-item  wx:for="{{indexpicList}}" wx:key="{{index}}" wx:for-index="{{index}}">
+              <image src="{{item}}"  class="slide-image" mode='aspectFill'/>
+            </swiper-item>
+          </swiper>
+   </view>
+   <notice-tag noticeList="{{noticeList}}"></notice-tag>
+   <!-- <view class='button button-order sys-flex sys-flex-center'>自助点单</view> -->
+   <view class='button store-desc-mess  sys-flex sys-flex-center button-line' bindtap="bindline">立即取号</view>
+
+   <!--选择人数  进行排队-->
+   <choose-table istoast="{{istoast}}"></choose-table>
+</view>

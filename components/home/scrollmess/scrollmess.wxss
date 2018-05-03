@@ -1,0 +1,42 @@
+.hot-mess{
+  width: 100%;
+  height: 70rpx;
+  line-height: 40rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hot-mess image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.mess-list{
+  width: 55%;
+  height: 40rpx;
+  text-align:left;
+  font-size:24rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.animation-item{
+  position: absolute;
+  top: 0;
+  left: 20rpx;
+}
+
+.notice-item{
+  height: 20px;
+}
+
+.title{
+  color: red;
+  padding-right: 8rpx;
+}
+
+.content{
+  font-size: 26rpx;
+}

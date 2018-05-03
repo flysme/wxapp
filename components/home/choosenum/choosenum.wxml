@@ -1,0 +1,29 @@
+<view wx:if="{{istoast}}">
+  <view class='sheet-main'>
+    <view class='title'>请选择餐桌类型</view>
+     <view class='table-list'>
+         <view class='table-item'>
+            <view class='table-classify'>用餐人数( 必填 )</view>
+            <scroll-view scroll-x>
+              <view  class='meals-num'>
+                  <view class="num {{isnum==index?'select':''}}" bindtap="bindnum" wx:for="{{mealsList}}" wx:for-index="index" wx:key="{{index}}"  data-index="{{index}}" data-num="{{item.num}}">{{item.num}}人</view>
+              </view>
+            </scroll-view>
+         </view>
+          <view class='table-item'>
+            <view class='table-classify'>位置要求</view>
+            <scroll-view scroll-x>
+              <view  class='demand-list'>
+                  <view class="demand   {{item.ischoose?'select-demand':''}} {{item.ischoose&&istable == index ?'select':''}}" bindtap="bindtable" wx:for="{{tabledemand}}" wx:for-index="index" wx:key="{{index}}" data-ischoose="{{item.ischoose}}"  data-table="{{item.room}}" data-index="{{index}}">
+                      <view>{{item.room}}</view>
+                       <view wx:if="{{item.instruction}}" class='instruction'>{{item.instruction}}</view> 
+                  </view>
+              </view>
+            </scroll-view>
+         </view>
+         <view class="btn {{disabled?'':'btn-submit'}}" bindtap="submit">确认</view>
+    </view> 
+  </view>
+  <view class='mask'></view>
+  <image src='/resource/images/common/cacel.png' class='cancel' bindtap="cancel"></image>
+</view>

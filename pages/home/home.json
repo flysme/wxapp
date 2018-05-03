@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "notice-tag": "../../components/home/scrollmess/scrollmess",
+    "choose-table": "../../components/home/choosenum/choosenum"
+  }
+}

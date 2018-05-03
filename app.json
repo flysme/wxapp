@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/order/order"
+  ],
+  "subPackages": [
+      {
+        "root": "pages/homeComponent",
+        "pages": [
+          "storeDetail/storeDetail"
+        ]
+      }
+  ],
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#499bfb",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/resource/images/common/home_pre.png",
+        "selectedIconPath": "/resource/images/common/home_cur.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "/resource/images/common/order_pre.png",
+        "selectedIconPath": "/resource/images/common/order_cur.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/resource/images/common/mine_pre.png",
+        "selectedIconPath": "/resource/images/common/mine_cur.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#499bfb",
+    "navigationBarTitleText": "点餐吧",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#fbf9fe"
+  }
+}

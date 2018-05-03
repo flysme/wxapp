@@ -1,0 +1,13 @@
+<view class="hot-mess">
+     <image src='/resource/images/common/mess.png'></image> 
+    <view class='mess-list'>
+        <view animation="{{animationData}}" class='animation-item'>
+            <block wx:for="{{noticeList}}" wx:key="{{index}}" wx:for-index="{{index}}">
+              <view class='notice-item'> 
+                <text class='title'>{{item.title}}</text>
+                <text class='content'>{{item.content}}</text>
+              </view>
+           </block>  
+        </view>
+    </view>
+</view>

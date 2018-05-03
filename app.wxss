@@ -1,0 +1,32 @@
+/*color  */
+
+.theme-color{
+  color: #499bfb;
+}
+
+.theme-back-color{
+  background: #499bfb;
+}
+
+
+/*layout ---common  */
+.sys-flex{
+  display: flex;
+  display: -webkit-flex;
+}
+
+.sys-flex-one{
+  flex: 1;
+}
+
+.sys-flex-align-center{
+  align-items: center;
+}
+
+.sys-flex-center{
+  justify-content: center;
+}
+
+.flex-dercition-column{
+  flex-direction:column;
+}
