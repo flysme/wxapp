@@ -25,6 +25,14 @@ Page({
   bindline(){
     this.setData({ istoast:true})
   },
+  setnum(e){
+    let demand = e.detail;
+    console.log(demand);
+    this.setData({ istoast: false })
+    wx.navigateTo({
+      url: '../homeComponent/waitNumber/waitNumber'
+    })
+  },
   onShareAppMessage: function () {
   
   }

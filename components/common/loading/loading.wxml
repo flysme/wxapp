@@ -1,0 +1,6 @@
+<view class='mask-back' wx:if="{{isloading}}">
+   <view class="spinner">
+      <view class="double-bounce1"></view>
+      <view class="double-bounce2"></view>
+   </view> 
+</view> 

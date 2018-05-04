@@ -7,9 +7,11 @@
           </swiper>
    </view>
    <notice-tag noticeList="{{noticeList}}"></notice-tag>
-   <!-- <view class='button button-order sys-flex sys-flex-center'>自助点单</view> -->
-   <view class='button store-desc-mess  sys-flex sys-flex-center button-line' bindtap="bindline">立即取号</view>
+    <view class='button button-order sys-flex sys-flex-center'  bindtap="bindline">立即取号</view> 
+   <!-- <view class='button store-desc-mess  sys-flex sys-flex-center button-line' bindtap="bindline">立即取号</view> -->
 
-   <!--选择人数  进行排队-->
-   <choose-table istoast="{{istoast}}"></choose-table>
+   <!--选择人数、桌位类型-->
+   <choose-table istoast="{{istoast}}" bindsetnum="setnum"></choose-table>
+   <!--进行排队 当前排队状态 -->
+   <!-- <wait-num istoast="{{istoast}}"></wait-num> -->
 </view>

@@ -56,6 +56,7 @@ Component({
       this.setData({ istable: index });
       this.isbtn();
     },
+    // 处理位置状态
     utilsTabledemand(num){
       let tabledemand = this.data.tabledemand;
       let istable = this.data.istable;
@@ -70,18 +71,27 @@ Component({
       })
       this.setData({ tabledemand: newtabledemandList})
     },
-    isbtn(){
-      let customeremark = this.data.customeremark;
-      let isnum = this.data.isnum, istable = this.data.istable;
-      let isEmpty = Object.values(customeremark).length >= 2 && isnum > -1 && istable > -1;
-      this.setData({ disabled:isEmpty?false:true})
-    },
+    // 提交排队
     submit(){
       console.log(this.data.customeremark);
+      let hasCustomer = Object.keys(this.data.customeremark).length>=2;
+      if (!hasCustomer)return;
+      this.triggerEvent('setnum', this.data.customeremark);
+      this.setData({ istoast: false, isnum: -1, istable: -1, customeremark: {} })
+      this.isbtn();
     },
+    // 取消选择排队
     cancel(){
       this.setData({ istoast: false, isnum: -1, istable: -1, customeremark:{}})
       this.utilsTabledemand();
+      this.isbtn();
+    },
+    // 判断提交是否可用
+    isbtn() {
+      let customeremark = this.data.customeremark;
+      let isnum = this.data.isnum, istable = this.data.istable;
+      let isEmpty = Object.values(customeremark).length >= 2 && isnum > -1 && istable > -1;
+      this.setData({ disabled: isEmpty ? false : true })
     }
   }
 })

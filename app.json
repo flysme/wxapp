@@ -5,12 +5,13 @@
     "pages/order/order"
   ],
   "subPackages": [
-      {
-        "root": "pages/homeComponent",
-        "pages": [
-          "storeDetail/storeDetail"
-        ]
-      }
+    {
+      "root": "pages/homeComponent",
+      "pages": [
+        "storeDetail/storeDetail",
+        "waitNumber/waitNumber"
+      ]
+    }
   ],
   "tabBar": {
     "color": "#bfbfbf",
