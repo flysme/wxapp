@@ -43,12 +43,11 @@
 }
 
 .button-line{
-  background: -webkit-linear-gradient(left, orange, orangered);  
+  background: -webkit-linear-gradient(left, rgb(253,71,18),rgb(253,91,18) );  
 }
 
 .store-desc-mess{
   width: 90%;
   margin:30rpx auto;
   min-height: 40px;
-  background: red;
 }

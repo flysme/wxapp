@@ -22,13 +22,19 @@ Component({
       { id: 4, num: 5 },
       { id: 5, num: 6 },
       { id: 6, num: 7 },
-      { id: 7, num: 8 }
+      { id: 7, num: 8 },
+      { id: 7, num: 9 },
+      { id: 7, num: 10 },
+      { id: 7, num: 11 },
+      { id: 7, num: 12 },
+      { id: 7, num: 13 },
+      { id: 7, num: 14 }
     ],
     tabledemand:[
-      { id: 1, room: '要求不限', instruction: '', range: { maxnumber:7,minnumber:1},ischoose:true },
-      { id: 2, room: '尽量卡座', instruction: '3 - 4人可选', range: { maxnumber: 4, minnumber: 3 }, ischoose: false },
-      { id: 3, room: '尽量包厢', instruction: '6 - 8人可选', range: { maxnumber: 8, minnumber: 6 }, ischoose: false },
-      { id: 4, room: '尽量卡座', instruction: '3 - 4人可选', range: { maxnumber: 4, minnumber: 3 }, ischoose: false},
+      { id: 1, room: '小桌', instruction: '1 - 2 人可选', range: { maxnumber: 2, minnumber: 1 }, ischoose: false, serial:'s' },
+      { id: 2, room: '中桌', instruction: '3 - 5人可选', range: { maxnumber: 5, minnumber: 3 }, ischoose: false, serial: 'm'},
+      { id: 3, room: '大桌', instruction: '6 - 9人可选', range: { maxnumber: 9, minnumber: 6 }, ischoose: false, serial: 'l'},
+      { id: 4, room: '超大桌', instruction: '10 - 14人可选', range: { maxnumber: 14, minnumber: 10 }, ischoose: false,serial: 'h'},
     ],
     isnum:-1, //就餐人数选择状态值
     istable:-1, //位置要求选择状态值
@@ -53,6 +59,7 @@ Component({
       let { index, table, ischoose } = e.currentTarget.dataset;
       if (!ischoose)return;
       this.data.customeremark.table = table;  //位置要求
+      this.data.customeremark.serial = this.data.tabledemand[index].serial;  //编号开头
       this.setData({ istable: index });
       this.isbtn();
     },
@@ -62,7 +69,7 @@ Component({
       let istable = this.data.istable;
       let newtabledemandList = tabledemand && tabledemand.map((tableItem,currentIndex)=>{
             let min = tableItem.range.minnumber, max = tableItem.range.maxnumber;
-            tableItem.ischoose = currentIndex == 0 ?true: false;
+            tableItem.ischoose = false;
             if (num <= max && num >= min)tableItem.ischoose = true;
             if (currentIndex == istable && !tableItem.ischoose){
               this.setData({ istable: -1 })
@@ -78,6 +85,7 @@ Component({
       if (!hasCustomer)return;
       this.triggerEvent('setnum', this.data.customeremark);
       this.setData({ istoast: false, isnum: -1, istable: -1, customeremark: {} })
+      this.utilsTabledemand();
       this.isbtn();
     },
     // 取消选择排队

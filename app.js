@@ -24,6 +24,12 @@ App({
       })
     }
   },
+  setstorage(key,value){
+    wx.setStorageSync(key, value)
+  },
+  getstorage(key){
+   return wx.getStorageSync(key)
+  },
   globalData:{
     userInfo:null
   }

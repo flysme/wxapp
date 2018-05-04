@@ -30,3 +30,10 @@
 .flex-dercition-column{
   flex-direction:column;
 }
+
+.hidden{
+  display: none;
+}
+.vis-hidden{
+  visibility: hidden;
+}
