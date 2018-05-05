@@ -1,10 +1,11 @@
-//app.js
 App({
+  common:{
+    guid:'xxxxxx',
+    code:null //wx-code
+  },
+  API:"http://www.sbhxr.cn/index.php/admin",
   onLaunch: function () {
-    //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    
   },
   getUserInfo:function(cb){
     var that = this
@@ -29,6 +30,9 @@ App({
   },
   getstorage(key){
    return wx.getStorageSync(key)
+  },
+  clearstorage(key) {
+    wx.removeStorageSync(key)
   },
   globalData:{
     userInfo:null

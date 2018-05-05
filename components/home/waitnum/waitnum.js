@@ -41,13 +41,14 @@ Component({
     waitTime() {
       let afterTime = getstorage('afterTime');
       console.log(afterTime, 'afterTime')
-      let dealy = 1000 * 60; //一分钟计算一次当前时间
+      let dealy = 1000; //首次进入计算一次当前时间
       let m = 60;
       let i = 0;
       let _this = this;
-      function isTime() {
-        console.log('dealy', dealy)
+      function isTime(dealytime) {
+        console.log("dealytime", dealytime)
         let nowTime = Date.now();
+        let delay = 1000 * 60 //当前等待中为一分钟获取一次最新等待时间
         setTimeout(() => {
           let second = Math.ceil(((nowTime - afterTime) / 1000));
           let waitTime = Math.ceil((second < m ? 0 : second / m)); //当前最新时间减去排队下号时间
@@ -55,10 +56,10 @@ Component({
           console.log(i++,'iiiiixxxxx-----')
           setstorage('waittime', waitTime); //存下用于首次进入
           _this.setData({ waitTime: waitTime })
-          isTime() //一分钟进行一次重新等待时间
-        }, 1000)
+          isTime(delay) //一分钟进行一次重新等待时间
+        }, dealytime)
       }
-      afterTime && isTime();
+      afterTime && isTime(dealy);
     },
     // 刷新当前状态
     refrshStatus() {

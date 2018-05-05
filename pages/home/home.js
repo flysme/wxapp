@@ -1,4 +1,6 @@
-// pages/home/home.js
+let { getUserInfo }  = getApp();
+let PromiseService = require("../../utils/promise");
+
 Page({
 
   /**
@@ -21,9 +23,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.authorize({
+      scope: 'scope.userInfo'
+    })
   },
-  bindline(){
+  bindline(e){
+    console.log(e,'xxxxx')
+    getUserInfo(res=>{console.log(res)});
     this.setData({ istoast:true})
   },
   setnum(e){
