@@ -41,6 +41,7 @@
     "navigationBarBackgroundColor": "#499bfb",
     "navigationBarTitleText": "点餐吧",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#fbf9fe"
+    "backgroundColor": "#fbf9fe",
+    "enablePullDownRefresh":true
   }
 }

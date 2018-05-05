@@ -1,6 +1,6 @@
 <view class="wait-bar">
     <view class="scroll-tip {{isTip?'':'vis-hidden'}}"><text>{{cumstertip}}</text></view>
-    <view class='header' bindtap="jidian">
+    <view class='header'>
         <view class='mine-num'>我的排队号:<text>S001</text>号</view>
         <view class='mine-person'>前方等待<text>1</text>桌</view>
         <view class='mine-person'>您已等待<text>{{waitTime}}</text>分钟</view>

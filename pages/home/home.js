@@ -39,13 +39,17 @@ Page({
       timingFunction: "ease",
       delay: 4000
     })
-
     animation.translateY(`${range}vh`).step({ duration:2000})
     this.setData({
       animationData: animation.export()
     })
+    wx.setNavigationBarTitle({'title':'排队中'})
   },
   onShareAppMessage: function () {
   
+  },
+  onPullDownRefresh(){
+    console.log('xxxx')
+    // wx.stopPullDownRefresh()
   }
 })

@@ -4,5 +4,6 @@
     "choose-table": "../../components/home/choosenum/choosenum",
     "wait-num": "../../components/home/waitnum/waitnum",
     "loading": "../../components/common/loading/loading"
-  }
+  },
+  "enablePullDownRefresh":true
 }
