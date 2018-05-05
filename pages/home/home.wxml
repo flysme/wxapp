@@ -13,5 +13,7 @@
    <!--选择人数、桌位类型-->
    <choose-table istoast="{{istoast}}" bindsetnum="setnum"></choose-table>
    <!--进行排队 当前排队状态 -->
-   <!-- <wait-num istoast="{{istoast}}"></wait-num> -->
+    <view class="wait-num {{animationData?'':'hidden'}}"  animation="{{animationData}}">
+        <wait-num wx:if="{{animationData}}"></wait-num>
+    </view>  
 </view>

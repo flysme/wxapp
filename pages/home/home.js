@@ -7,6 +7,7 @@ Page({
   data: {
     curcolor:'#499bfb',
     precolor:'#FFF',
+    animationData:'',
     title:'',
     noticeList:[
       { title: "最新", content: '新推出麻辣小龙虾~~~~' },
@@ -29,8 +30,19 @@ Page({
     let demand = e.detail;
     console.log(demand);
     this.setData({ istoast: false })
-    wx.navigateTo({
-      url: '../homeComponent/waitNumber/waitNumber'
+    this.animation(-100);
+  },
+  animation(range) {
+    let animation = wx.createAnimation({
+      transformOrigin: "50% 50%",
+      duration: 1000,
+      timingFunction: "ease",
+      delay: 4000
+    })
+
+    animation.translateY(`${range}vh`).step({ duration:2000})
+    this.setData({
+      animationData: animation.export()
     })
   },
   onShareAppMessage: function () {

@@ -8,8 +8,7 @@
     {
       "root": "pages/homeComponent",
       "pages": [
-        "storeDetail/storeDetail",
-        "waitNumber/waitNumber"
+        "storeDetail/storeDetail"
       ]
     }
   ],

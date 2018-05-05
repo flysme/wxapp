@@ -51,3 +51,10 @@
   margin:30rpx auto;
   min-height: 40px;
 }
+
+.wait-num{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -100vh;
+}
