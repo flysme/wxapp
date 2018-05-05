@@ -7,7 +7,7 @@ const Header = {
 let requestHeader = {}; //请求头
 let currentCode = getstorage('code') || '';
 
-// header请求头
+// requestHeader请求头
 const wrapHeader = (cb)=>{
   if (currentCode){
     requestHeader[Header['WX_CODE']] = currentCode;
